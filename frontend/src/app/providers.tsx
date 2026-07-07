@@ -12,8 +12,8 @@ interface AppContextType {
   language: string;
   setLanguage: (lang: string) => void;
   t: (key: string) => string;
-  user: { uid: string; name: string; email: string } | null;
-  login: (customUser?: { uid: string; name: string; email: string }) => void;
+  user: { uid: string; name: string; email: string; picture?: string } | null;
+  login: (customUser?: { uid: string; name: string; email: string; picture?: string }) => void;
   logout: () => void;
 }
 
@@ -39,7 +39,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("language", lang);
   };
 
-  const login = (customUser?: { uid: string; name: string; email: string }) => {
+  const login = (customUser?: { uid: string; name: string; email: string; picture?: string }) => {
     const selectedUser = customUser || { uid: "demo-citizen-uid-123", name: "Ramesh Kumar", email: "ramesh@demo.in" };
     setUser(selectedUser);
     localStorage.setItem("user", JSON.stringify(selectedUser));
