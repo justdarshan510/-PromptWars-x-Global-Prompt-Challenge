@@ -458,8 +458,9 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
             ) : (
               <form onSubmit={handleReportIssue} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Issue Category</label>
+                  <label htmlFor="issue-category-select" className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Issue Category</label>
                   <select
+                    id="issue-category-select"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     className="w-full bg-white border text-gray-900 rounded-xl px-4 py-3 text-sm focus:ring-1 focus:ring-[var(--primary)] outline-none"
@@ -473,8 +474,9 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Grievance Description</label>
+                  <label htmlFor="grievance-description-textarea" className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Grievance Description</label>
                   <textarea
+                    id="grievance-description-textarea"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     rows={3}
@@ -485,11 +487,12 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Exact Location</label>
+                  <label htmlFor="exact-location-input" className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1.5">Exact Location</label>
                   <div className="relative flex items-center bg-white border rounded-xl focus-within:ring-1 focus-within:ring-[var(--primary)]"
                     style={{ borderColor: "var(--outline)" }}>
                     <MapPin className="w-4 h-4 text-gray-400 ml-3" />
                     <input
+                      id="exact-location-input"
                       type="text"
                       value={location}
                       onChange={(e) => setLocation(e.target.value)}
@@ -570,8 +573,9 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
                 <h3 className="font-bold text-gray-700 text-xs uppercase tracking-wider border-b pb-2">Your Demographics</h3>
                 
                 <div>
-                  <label className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Age: {age}</label>
+                  <label htmlFor="age-range-input" className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Age: {age}</label>
                   <input
+                    id="age-range-input"
                     type="range"
                     min="15"
                     max="90"
@@ -805,8 +809,9 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
                     // Regular Schemes Form
                     <div className="space-y-3.5">
                       <div>
-                        <label className="block text-[10px] font-bold text-gray-500 uppercase mb-1">Full Citizen Name</label>
+                        <label htmlFor="full-name-input" className="block text-[10px] font-bold text-gray-500 uppercase mb-1">Full Citizen Name</label>
                         <input
+                          id="full-name-input"
                           type="text"
                           required
                           value={formInputs.name || ""}
@@ -817,8 +822,9 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
                       </div>
 
                       <div>
-                        <label className="block text-[10px] font-bold text-gray-500 uppercase mb-1">Aadhaar Identification Number</label>
+                        <label htmlFor="aadhaar-number-input" className="block text-[10px] font-bold text-gray-500 uppercase mb-1">Aadhaar Identification Number</label>
                         <input
+                          id="aadhaar-number-input"
                           type="text"
                           required
                           maxLength={12}
@@ -831,8 +837,9 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
 
                       {activeFormService.id === 1 && (
                         <div>
-                          <label className="block text-[10px] font-bold text-gray-500 uppercase mb-1">Land survey / Khasra number</label>
+                          <label htmlFor="land-survey-input" className="block text-[10px] font-bold text-gray-500 uppercase mb-1">Land survey / Khasra number</label>
                           <input
+                            id="land-survey-input"
                             type="text"
                             required
                             placeholder="e.g. HN-990-2"

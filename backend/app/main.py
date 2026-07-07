@@ -18,10 +18,16 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Smart Bharat API", version="1.0.0")
 
-# Enable CORS configuration for frontend client integration
+# Enable secure CORS configuration for frontend clients
+allowed_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://smartbharat-orpin.vercel.app"
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -460,6 +460,7 @@ function DashboardContent() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search documents, guides..."
                     className="w-full bg-transparent border-none outline-none py-3 text-xs text-gray-800 placeholder-gray-400 focus:ring-0"
+                    aria-label="Search documents and guides"
                   />
                 </div>
               </div>
@@ -671,7 +672,7 @@ function DashboardContent() {
                   <p className="font-bold text-gray-800">High Contrast Mode</p>
                   <p className="text-[10px] text-gray-400">Increase readability contrast</p>
                 </div>
-                <input type="checkbox" className="rounded text-[var(--primary)] focus:ring-[var(--primary)] cursor-pointer" />
+                <input type="checkbox" aria-label="Toggle High Contrast Mode" className="rounded text-[var(--primary)] focus:ring-[var(--primary)] cursor-pointer" />
               </div>
 
               <div className="flex justify-between items-center border-b pb-3">
@@ -679,7 +680,7 @@ function DashboardContent() {
                   <p className="font-bold text-gray-800">Notifications</p>
                   <p className="text-[10px] text-gray-400">Receive SMS alerts for grievances</p>
                 </div>
-                <input type="checkbox" defaultChecked className="rounded text-[var(--primary)] focus:ring-[var(--primary)] cursor-pointer" />
+                <input type="checkbox" defaultChecked aria-label="Toggle SMS Notifications" className="rounded text-[var(--primary)] focus:ring-[var(--primary)] cursor-pointer" />
               </div>
 
               <div className="pt-2 text-center text-[10px] text-gray-400 font-medium">

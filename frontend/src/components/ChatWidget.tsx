@@ -222,6 +222,7 @@ export default function ChatWidget({ hero = false }: { hero?: boolean }) {
                 placeholder={t("chat_placeholder")}
                 className="w-full bg-transparent border-none text-sm outline-none px-6 py-4 placeholder:text-gray-400"
                 disabled={loading}
+                aria-label="Ask BharatGPT assistant"
                 style={{ color: "var(--on-surface)" }}
               />
               <button type="button" onClick={toggleListening}
@@ -405,6 +406,7 @@ export default function ChatWidget({ hero = false }: { hero?: boolean }) {
             placeholder={t("chat_placeholder")}
             className="w-full bg-transparent border-none outline-none px-4 py-3 text-sm placeholder:text-gray-400"
             disabled={loading}
+            aria-label="Ask floating chat assistant"
             style={{ color: "var(--on-surface)" }}
           />
           <button
