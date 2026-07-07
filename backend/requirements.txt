@@ -5,3 +5,8 @@ sqlalchemy
 google-genai
 python-dotenv
 firebase-admin
+
+# Testing dependencies
+pytest
+pytest-asyncio
+httpx

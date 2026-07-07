@@ -307,9 +307,13 @@ export async function POST(req: NextRequest) {
     });
 
     // Build chat history for context (exclude current message)
+    interface ChatMessage {
+      role: string;
+      text: string;
+    }
     const chatHistory = (body.history || [])
       .slice(0, -1)
-      .map((msg: any) => ({
+      .map((msg: ChatMessage) => ({
         role: msg.role === "user" ? "user" : "model",
         parts: [{ text: msg.text }],
       }));
@@ -326,8 +330,9 @@ export async function POST(req: NextRequest) {
     const responseText = result.response.text();
     return NextResponse.json({ response: responseText });
 
-  } catch (error: any) {
-    console.error("Gemini API error (routing to fallback):", error?.message);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error("Gemini API error (routing to fallback):", errorMessage);
     
     // In case of any API error (rate limits, network issues, 429), return local matched response
     const fallbackResponse = getLocalFallbackResponse(query);

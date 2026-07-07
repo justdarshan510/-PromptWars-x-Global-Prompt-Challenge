@@ -101,10 +101,10 @@ def chat_endpoint(request: ChatRequest):
 def save_profile(profile: CitizenCreate, db: Session = Depends(get_db)):
     db_citizen = db.query(Citizen).filter(Citizen.id == profile.id).first()
     if db_citizen:
-        for key, value in profile.dict().items():
+        for key, value in profile.model_dump().items():
             setattr(db_citizen, key, value)
     else:
-        db_citizen = Citizen(**profile.dict())
+        db_citizen = Citizen(**profile.model_dump())
         db.add(db_citizen)
     db.commit()
     db.refresh(db_citizen)

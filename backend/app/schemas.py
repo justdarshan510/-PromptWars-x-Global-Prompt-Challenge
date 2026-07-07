@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import List, Optional, Any
 from datetime import datetime
 
@@ -16,9 +16,7 @@ class CitizenCreate(CitizenBase):
 
 class CitizenResponse(CitizenBase):
     id: str
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ComplaintBase(BaseModel):
     category: str
@@ -40,9 +38,7 @@ class ComplaintResponse(ComplaintBase):
     longitude: Optional[str]
     created_at: datetime
     updated_at: datetime
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ServiceCatalogResponse(BaseModel):
     id: int
@@ -51,9 +47,7 @@ class ServiceCatalogResponse(BaseModel):
     description: str
     eligibility_criteria: Optional[Any] = None
     required_documents: Optional[Any] = None
-
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 class ChatRequest(BaseModel):
     query: str
