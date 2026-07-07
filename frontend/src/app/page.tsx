@@ -7,7 +7,7 @@ import ServicesGrid from "../components/ServicesGrid";
 import { X } from "lucide-react";
 
 function DashboardContent() {
-  const { t, language, setLanguage, user, login, logout } = useApp();
+  const { language, setLanguage, user, login, logout } = useApp();
   const [activeTab, setActiveTab] = useState("chat");
 
   const [selectedCategory, setSelectedCategory] = useState("All Resources");
@@ -431,7 +431,7 @@ function DashboardContent() {
                 </span>
                 <h1 className="text-3xl font-black text-gray-900 mt-1">Digital Resource Library</h1>
                 <p className="text-xs text-gray-600">
-                  Access official guides, government documents, and educational materials powered by Smart Bharat's secure repository.
+                  Access official guides, government documents, and educational materials powered by Smart Bharat&apos;s secure repository.
                 </p>
               </div>
 

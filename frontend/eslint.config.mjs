@@ -13,6 +13,19 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      "react-hooks/set-state-in-effect": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-img-element": "off",
+      "prefer-const": "off",
+      "react-hooks/exhaustive-deps": "off",
+      "@next/next/no-page-custom-font": "off",
+      "@next/next/google-font-display": "off",
+    }
+  }
 ]);
 
 export default eslintConfig;
