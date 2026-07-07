@@ -60,6 +60,7 @@ export default function Navbar({ activeSection, setActiveSection }: {
           <select
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
+            aria-label="Select Interface Language"
             className="bg-transparent text-white border-none outline-none cursor-pointer font-medium focus:ring-0 text-xs md:text-sm"
           >
             <option value="en" className="bg-slate-900 text-white">English</option>
@@ -77,6 +78,7 @@ export default function Navbar({ activeSection, setActiveSection }: {
               onClick={logout}
               className="p-1.5 rounded-full hover:bg-red-500/10 text-slate-400 hover:text-red-400 transition-colors"
               title="Sign Out"
+              aria-label="Sign Out"
             >
               <LogOut className="w-4 h-4" />
             </button>

@@ -388,6 +388,7 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
                       </span>
                       <button 
                         onClick={() => toggleBookmark(svc.id)}
+                        aria-label={bookmarks.includes(svc.id) ? "Remove bookmark" : "Add bookmark"}
                         className="text-gray-400 hover:text-[var(--primary)] transition-colors"
                       >
                         <span className={`material-symbols-${bookmarks.includes(svc.id) ? "filled" : "outlined"} text-xl`}
@@ -664,6 +665,7 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
               </div>
               <button 
                 onClick={() => setSelectedService(null)}
+                aria-label="Close details"
                 className="text-gray-400 hover:text-gray-600 p-1 bg-white border rounded-full shadow-sm"
               >
                 <X className="w-4 h-4" />
@@ -749,6 +751,7 @@ export default function ServicesGrid({ activeTab, setActiveTab }: {
               </h3>
               <button 
                 onClick={() => setActiveFormService(null)}
+                aria-label="Close application form"
                 className="text-gray-400 hover:text-gray-600 p-1 bg-white border rounded-full"
               >
                 <X className="w-3.5 h-3.5" />

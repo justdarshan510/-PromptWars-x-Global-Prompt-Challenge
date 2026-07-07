@@ -226,6 +226,7 @@ export default function ChatWidget({ hero = false }: { hero?: boolean }) {
                 style={{ color: "var(--on-surface)" }}
               />
               <button type="button" onClick={toggleListening}
+                aria-label="Toggle voice input"
                 className={`p-2 mr-2 rounded-full transition-all ${ isListening ? "bg-red-100 text-red-600" : "text-gray-400 hover:text-gray-600"}`}>
                 {isListening
                   ? <span className="material-symbols-outlined text-lg">mic_off</span>
@@ -233,6 +234,7 @@ export default function ChatWidget({ hero = false }: { hero?: boolean }) {
               </button>
             </div>
             <button type="submit"
+              aria-label="Send message"
               className="p-4 rounded-full text-white shadow-md transition-all hover:opacity-90 active:scale-95 disabled:opacity-50"
               disabled={!input.trim() || loading}
               style={{ background: "var(--primary)" }}>
@@ -300,6 +302,7 @@ export default function ChatWidget({ hero = false }: { hero?: boolean }) {
           ])}
           className="text-slate-400 hover:text-white p-2 rounded-lg hover:bg-slate-800/60 transition-colors"
           title="Reset Conversation"
+          aria-label="Reset Conversation"
         >
           <RefreshCw className="w-4 h-4" />
         </button>
@@ -412,6 +415,7 @@ export default function ChatWidget({ hero = false }: { hero?: boolean }) {
           <button
             type="button"
             onClick={toggleListening}
+            aria-label="Toggle voice input"
             className={`p-2 mr-2 rounded-full transition-all ${isListening ? "bg-red-100 text-red-600" : "text-gray-400 hover:text-gray-600"}`}
           >
             {isListening
@@ -421,6 +425,7 @@ export default function ChatWidget({ hero = false }: { hero?: boolean }) {
         </div>
         <button
           type="submit"
+          aria-label="Send message"
           className="p-3 rounded-full text-white shadow-md transition-all hover:opacity-90 disabled:opacity-50"
           disabled={!input.trim() || loading}
           style={{ background: "var(--primary)" }}

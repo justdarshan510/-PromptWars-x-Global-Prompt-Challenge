@@ -208,6 +208,7 @@ function DashboardContent() {
           </select>
           <button 
             onClick={() => setShowNotifications(!showNotifications)}
+            aria-label="Toggle notifications"
             className="p-2 text-blue-200 hover:text-white hover:bg-white/10 rounded-lg transition-all relative"
           >
             <span className="material-symbols-outlined text-xl">notifications</span>
@@ -255,6 +256,7 @@ function DashboardContent() {
                 onClick={logout}
                 className="p-2 text-blue-200 hover:text-white hover:bg-white/10 rounded-lg transition-all"
                 title="Sign Out"
+                aria-label="Sign Out"
               >
                 <span className="material-symbols-outlined text-base">logout</span>
               </button>
@@ -562,7 +564,7 @@ function DashboardContent() {
                         </div>
                         <div className="flex justify-between items-center text-[10px] text-gray-400 font-bold border-t pt-2.5 mt-2">
                           <span>{item.readTime}</span>
-                          <button className="text-gray-400 hover:text-[var(--primary)] transition-all">
+                          <button aria-label="Share resource" className="text-gray-400 hover:text-[var(--primary)] transition-all">
                             <span className="material-symbols-outlined text-xs">share</span>
                           </button>
                         </div>
@@ -644,6 +646,7 @@ function DashboardContent() {
               </h3>
               <button 
                 onClick={() => setOpenSettings(false)}
+                aria-label="Close settings"
                 className="text-gray-400 hover:text-gray-600 p-1 bg-white border rounded-full"
               >
                 <X className="w-3.5 h-3.5" />
@@ -711,6 +714,7 @@ function DashboardContent() {
               </h3>
               <button 
                 onClick={() => setOpenHelp(false)}
+                aria-label="Close FAQ support"
                 className="text-gray-400 hover:text-gray-600 p-1 bg-white border rounded-full"
               >
                 <X className="w-3.5 h-3.5" />
@@ -766,6 +770,7 @@ function DashboardContent() {
                   setGoogleLoading(false);
                   setGoogleAccounts(false);
                 }}
+                aria-label="Close login modal"
                 className="text-gray-400 hover:text-gray-600 p-1 bg-white border rounded-full"
               >
                 <X className="w-3.5 h-3.5" />
